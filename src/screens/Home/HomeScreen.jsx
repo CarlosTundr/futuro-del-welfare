@@ -22,6 +22,7 @@ import GoFlexScreen from '../GoFlex/GoFlexScreen.jsx'
 import MerchantScreen from '../GoFlex/MerchantScreen.jsx'
 import FringeScreen from '../Fringe/FringeScreen.jsx'
 import UsaBuoniFlow from '../Buoni/UsaBuoniFlow.jsx'
+import ServiziScreen from '../Servizi/ServiziScreen.jsx'
 import styles from './HomeScreen.module.css'
 
 const TABBAR_H = 84
@@ -51,6 +52,7 @@ export default function HomeScreen() {
   const [gfMerchant, setGfMerchant] = useState(null)
   const [fringeOpen, setFringeOpen] = useState(false)
   const [usaBuoniOpen, setUsaBuoniOpen] = useState(false)
+  const [serviziOpen, setServiziOpen] = useState(false)
 
   useEffect(() => {
     if (done) introSeen = true
@@ -63,6 +65,7 @@ export default function HomeScreen() {
   }
   const onNav = (id) => {
     if (id === 'carte') setCarteOpen(true)
+    else if (id === 'servizi') setServiziOpen(true)
     else setTab(id)
   }
 
@@ -252,6 +255,23 @@ export default function HomeScreen() {
       {/* Usa Buoni: flusso pagamento buoni pasto */}
       <AnimatePresence>
         {usaBuoniOpen && <UsaBuoniFlow key="usabuoni" onClose={() => setUsaBuoniOpen(false)} />}
+      </AnimatePresence>
+
+      {/* Servizi: catalogo (tab Servizi) */}
+      <AnimatePresence>
+        {serviziOpen && (
+          <ServiziScreen
+            key="servizi"
+            onClose={() => setServiziOpen(false)}
+            onNav={(id) => {
+              setServiziOpen(false)
+              if (id === 'carte') setCarteOpen(true)
+              else if (id === 'servizi') setServiziOpen(true)
+            }}
+            onFringe={() => setFringeOpen(true)}
+            onGoFlex={() => setGoFlexOpen(true)}
+          />
+        )}
       </AnimatePresence>
 
       {/* Fase 0: splash con fulmine fermo + bottone Entra */}

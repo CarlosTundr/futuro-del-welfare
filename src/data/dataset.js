@@ -186,4 +186,26 @@ export const carte = [
   },
 ]
 
-export default { user, wallets, homeTabs, transactions, bottomNav, spendiWelfare, dettagliWelfare, dettagliBuoni, carte }
+// Schermata Servizi (catalogo). Riusa gli item di spendiWelfare + una card Buoni pasto.
+export const servizi = {
+  intro: {
+    title: 'Non solo una carta',
+    sub: 'Con Tundr puoi utilizzare il tuo credito welfare a tuo piacimento.',
+  },
+  welfare: {
+    icon: 'tundr',
+    title: 'Welfare',
+    desc: 'Ecco i servizi dove spendere il tuo welfare, dal fringe al flex.',
+    items: [...spendiWelfare.cardOptions, ...spendiWelfare.others],
+  },
+  buoni: {
+    icon: 'utensils-solid',
+    title: 'Buoni pasto',
+    desc: 'Il servizio è in partnership con Pellegrini. Scegli un locale aderente nella sezione "Dove spendere" e paga direttamente con la carta o l\'app.',
+    items: [
+      { id: 'bp', icon: 'tag', theme: 'green', title: 'Buoni pasto Pellegrini', desc: 'Usa il credito per pranzi e spesa nei locali che aderiscono a Pellegrini.' },
+    ],
+  },
+}
+
+export default { user, wallets, homeTabs, transactions, bottomNav, spendiWelfare, dettagliWelfare, dettagliBuoni, carte, servizi }

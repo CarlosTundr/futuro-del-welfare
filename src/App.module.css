@@ -1,0 +1,49 @@
+/* Stili del placeholder di verifica. Tutto su token DS. */
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  min-height: 100%;
+  background:
+    radial-gradient(120% 60% at 50% 0%, var(--surface-background-brand-default-base) 0%, transparent 60%),
+    var(--surface-page-base);
+}
+
+.kicker {
+  font-size: var(--font-size-body-body2);
+  font-weight: 600;
+  color: var(--content-subtle-default, #5a5a58);
+  text-transform: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-2xl);
+  background: var(--surface-background-brand-default-base);
+  box-shadow: 0 12px 28px -10px rgba(253, 190, 25, 0.5);
+}
+
+.cardLabel {
+  font-size: var(--font-size-body-body3);
+  font-weight: 600;
+  color: var(--content-default-default);
+  opacity: 0.7;
+}
+
+.amount {
+  display: flex;
+  align-items: baseline;
+  color: var(--content-default-default);
+}
+.int { font-size: 44px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.dec { font-size: 20px; font-weight: 700; margin-left: 2px; }
+
+.note {
+  font-size: var(--font-size-body-body2);
+  line-height: 1.5;
+  color: var(--content-subtle-default, #5a5a58);
+}

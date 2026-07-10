@@ -1,0 +1,23 @@
+.amount {
+  display: flex;
+  align-items: baseline;
+  color: var(--content-default-default);
+}
+.int {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h1); /* 36 */
+  line-height: var(--line-height-heading-h1);
+  letter-spacing: -0.01em;
+}
+.dec {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-body-body1); /* 14 */
+  margin-left: 2px;
+}
+.total {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: var(--font-size-body-body1);
+}

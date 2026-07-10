@@ -1,0 +1,34 @@
+.track {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.segment {
+  position: relative;
+  flex: 1;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  isolation: isolate;
+}
+.pill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 999px;
+  background: var(--surface-background-neutral-default-base);
+  box-shadow: 0 2px 8px rgba(39, 39, 38, 0.12);
+}
+.label {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-body-body1);
+  color: var(--content-subtle-default);
+  transition: color 0.2s ease;
+}
+.active .label { color: var(--content-default-default); }

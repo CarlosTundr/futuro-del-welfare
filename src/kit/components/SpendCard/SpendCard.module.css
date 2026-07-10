@@ -1,0 +1,86 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: transparent;
+}
+
+/* Card principale (sopra il footer) */
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--surface-background-neutral-default-base);
+  border: 1px solid var(--surface-background-neutral-default-idle);
+  border-radius: var(--border-radius-2xl); /* 16px */
+  box-shadow: 0 4px 12px rgba(39, 39, 38, 0.08);
+}
+
+/* Icon tag colorato per tema accent */
+.tag {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+  /* icona = Content/Static #272726 (token Figma), scura per tutti i temi */
+  color: var(--content-default-default);
+}
+/* bg=accent muted, bordo=accent pale; icona=Content/Static #272726 (token Figma) */
+.tag[data-theme='grey']   { background: var(--accent-grey-default-muted, #f1f1f0);   border-color: var(--accent-grey-default-pale, #e7e7e5); }
+.tag[data-theme='yellow'] { background: var(--accent-yellow-default-muted, #fff7e1); border-color: var(--accent-yellow-default-pale, #ffebb4); }
+.tag[data-theme='sand']   { background: var(--accent-sand-default-muted, #f4ebdf);   border-color: var(--accent-sand-default-pale, #ddcdbe); }
+.tag[data-theme='green']  { background: var(--accent-green-default-muted, #e1f3f3);  border-color: var(--accent-green-default-pale, #b3e0e0); }
+.tag[data-theme='violet'] { background: var(--accent-violet-default-muted, #f5e8fd); border-color: var(--accent-violet-default-pale, #e5c4f8); }
+.tag[data-theme='indaco'] { background: var(--accent-indaco-default-muted, #e8eafd); border-color: var(--accent-indaco-default-pale, #c5caf8); }
+.tag[data-round='true'] { border-radius: 999px; }
+
+.box { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.titleRow { display: flex; align-items: center; gap: 8px; }
+.title {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h3);
+  line-height: var(--line-height-heading-h3);
+  color: var(--content-default-default);
+}
+.badge {
+  flex-shrink: 0;
+  background: var(--color-yellow-400);
+  color: var(--content-default-default);
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-body-body2);
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.desc {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-body2);
+  line-height: var(--line-height-body-body2);
+  color: var(--content-subtle-default);
+}
+.chev { color: var(--content-subtle-default); flex-shrink: 0; }
+
+/* Footer info: strip che spunta DA SOTTO la card (top nascosto dietro la card) */
+.footer {
+  position: relative;
+  z-index: 0;
+  margin-top: -20px;
+  padding: 28px var(--spacing-xl) 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--feedback-info-default-subtle, #d6eaf8);
+  color: var(--feedback-info-default-base, #1a6492);
+  border-radius: var(--border-radius-2xl);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-body2);
+}
+.footerValue { font-weight: 700; }

@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  background: var(--surface-background-neutral-default-base);
+  border: 1px solid var(--surface-background-neutral-default-idle);
+  border-radius: var(--border-radius-2xl);
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 12px rgba(39, 39, 38, 0.06);
+}
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+.ico {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-xs);
+  border-radius: 999px;
+  background: var(--accent-yellow-default-pale, #ffebb4);
+  color: var(--color-yellow-600);
+}
+.title {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h3);
+  line-height: var(--line-height-heading-h3);
+  color: var(--content-default-default);
+}

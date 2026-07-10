@@ -1,0 +1,18 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.logo {
+  /* 50% della larghezza disponibile */
+  width: 50%;
+  /* il fulmine nel wordmark sta a ~x155/402 (sinistra del centro):
+     sposto a destra ~11% della larghezza per centrarlo nel viewport.
+     --bolt-shift e' regolabile. */
+  transform: translateX(var(--bolt-shift, 11%));
+  /* forza il wordmark in bianco a prescindere dai colori del Lottie */
+  filter: brightness(0) invert(1) drop-shadow(0 8px 30px rgba(255, 255, 255, 0.35));
+}

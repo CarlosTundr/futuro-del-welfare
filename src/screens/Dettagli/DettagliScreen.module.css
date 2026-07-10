@@ -1,0 +1,87 @@
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  /* pagina su fondo giallo (card bianche sopra) */
+  background:
+    radial-gradient(130% 26% at 50% 0%, #fff3cf 0%, rgba(255, 243, 207, 0) 100%),
+    var(--color-yellow-300);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.root::-webkit-scrollbar { display: none; }
+
+/* Navbar fissa allo scroll, effetto glass */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--frame-safe-top, 54px) var(--spacing-lg) 12px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.back {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--surface-background-neutral-default-base);
+  color: var(--content-default-default);
+  box-shadow: 0 2px 8px rgba(39, 39, 38, 0.1);
+}
+.htitle {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-body-body1);
+  line-height: var(--line-height-body-body1);
+  color: var(--content-default-default);
+}
+.hspacer { width: 40px; height: 40px; }
+
+/* Contenuto */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-3xl);
+}
+.block { display: flex; flex-direction: column; gap: var(--spacing-lg); align-items: flex-start; }
+.label {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-body1);
+  color: var(--content-subtle-default);
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--link-default);
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  font-size: var(--font-size-body-body1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.usedLabel {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h3);
+  line-height: var(--line-height-heading-h3);
+  color: var(--content-default-default);
+}
+.cards { display: flex; flex-direction: column; gap: var(--spacing-lg); width: 100%; }
+.infoLine {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--content-default-default);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-body1);
+  line-height: var(--line-height-body-body1);
+}

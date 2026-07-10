@@ -1,0 +1,14 @@
+/* Layer a tutto schermo: il fulmine parte centrato nel viewport */
+.layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.bolt {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+  will-change: transform, filter;
+}

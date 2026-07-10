@@ -1,0 +1,108 @@
+.root { position: absolute; inset: 0; z-index: 60; }
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 39, 38, 0.45);
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 46px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-background-neutral-default-base);
+  border-top-left-radius: var(--scale-600);
+  border-top-right-radius: var(--scale-600);
+  overflow: hidden;
+  box-shadow: 0 -12px 40px rgba(39, 39, 38, 0.25);
+}
+
+/* Header */
+.header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px var(--spacing-lg);
+  padding-top: 16px;
+}
+.close {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  color: var(--content-default-default);
+}
+.htitle {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h3);
+  color: var(--content-default-default);
+}
+.hspacer { width: 40px; height: 40px; }
+
+/* Body scrollabile */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 var(--spacing-lg) calc(var(--spacing-3xl) + 8px);
+  scrollbar-width: none;
+}
+.body::-webkit-scrollbar { display: none; }
+
+/* Box Welfare */
+.walletBox {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--surface-background-neutral-default-raised);
+  border-radius: var(--border-radius-xl);
+}
+.favicon {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--color-yellow-400);
+  color: var(--content-default-default);
+}
+.wlabel {
+  flex: 1;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h3);
+  color: var(--content-default-default);
+}
+.wcredit { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.wcapt { font-family: var(--font-family-base); font-size: var(--font-size-body-body2); color: var(--content-subtle-default); }
+.wval { font-family: var(--font-family-base); font-weight: 700; font-size: var(--font-size-body-body1); color: var(--content-default-default); }
+
+/* Sezioni */
+.section { margin-top: var(--spacing-2xl); }
+.cartaHead { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+.cartaText { display: flex; flex-direction: column; gap: 4px; }
+.small { font-family: var(--font-family-base); font-size: var(--font-size-body-body1); color: var(--content-subtle-default); }
+.cartaTitle {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h2);
+  line-height: var(--line-height-heading-h2);
+  color: var(--content-default-default);
+}
+.q { color: var(--content-placeholder-default); }
+.cardImg { width: 80px; height: auto; border-radius: 8px; }
+
+.sectionTitle {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h2);
+  line-height: var(--line-height-heading-h2);
+  color: var(--content-default-default);
+  margin-bottom: var(--spacing-lg);
+}
+.cards { display: flex; flex-direction: column; gap: var(--spacing-lg); }

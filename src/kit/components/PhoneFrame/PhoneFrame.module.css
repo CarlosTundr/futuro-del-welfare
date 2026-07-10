@@ -1,0 +1,78 @@
+/* Stage: sfondo ambient, centra il device. Solo desktop. */
+.stage {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    radial-gradient(120% 90% at 50% -10%, var(--color-yellow-100) 0%, transparent 55%),
+    var(--color-grey-100);
+}
+
+/* Device: cornice iPhone 390x844 */
+.device {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  background: var(--color-grey-900);
+  border-radius: 55px;
+  padding: 12px;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.1),
+    0 24px 60px -12px rgba(0,0,0,0.45),
+    inset 0 0 0 2px rgba(255,255,255,0.06);
+}
+
+/* Dynamic island */
+.island {
+  position: absolute;
+  top: 24px; left: 50%; transform: translateX(-50%);
+  width: 116px; height: 34px;
+  background: #000; border-radius: 20px;
+  z-index: 20;
+}
+
+/* Screen: viewport scrollabile */
+.screen {
+  position: relative;
+  width: 100%; height: 100%;
+  border-radius: 44px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--surface-page-base);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.screen::-webkit-scrollbar { display: none; }
+
+/* viewport: contenitore unico del contenuto scrollabile */
+.viewport { position: relative; min-height: 100%; --frame-safe-top: 54px; }
+
+/* Status bar finta (solo desktop mockup) */
+.statusBar {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 100;
+  height: 54px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px 0 34px;
+  padding-top: 8px;
+  /* --sb-color impostato dalle schermate scure (es. Carte) per status bar bianca */
+  color: var(--sb-color, var(--content-default-default));
+  pointer-events: none;
+}
+.time { font-size: 15px; font-weight: 600; letter-spacing: 0.01em; }
+.icons { display: inline-flex; align-items: center; gap: 6px; }
+
+.content { min-height: 100%; }
+
+/* ===== MOBILE: la cornice sparisce, full-bleed ===== */
+@media (max-width: 480px) {
+  .stage { min-height: 100dvh; padding: 0; background: var(--surface-page-base); place-items: stretch; }
+  .device {
+    width: 100%; height: 100dvh;
+    border-radius: 0; padding: 0; box-shadow: none; background: transparent;
+  }
+  .island { display: none; }
+  .screen { border-radius: 0; }
+  .statusBar { display: none; } /* usa la status bar reale del device */
+  .viewport { --frame-safe-top: env(safe-area-inset-top, 0px); }
+}

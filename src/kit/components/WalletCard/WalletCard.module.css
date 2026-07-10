@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: 0 var(--spacing-lg);
+  text-align: center;
+}
+
+/* Testa: favicon + titolo */
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+.favicon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--content-default-default);
+}
+.title {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-heading-h2);
+  line-height: var(--line-height-heading-h2);
+  color: var(--content-default-default);
+}
+
+/* Importo */
+.amountBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg) 0;
+}
+.caption {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-body2);
+  color: var(--content-subtle-default);
+}
+.amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-family: var(--font-family-title);
+  font-weight: 700;
+  color: var(--content-default-default);
+}
+.int { font-size: 40px; letter-spacing: 0.4px; line-height: 1; }
+.dec { font-size: 24px; letter-spacing: 0.24px; margin-left: 1px; }
+
+/* Pill Dettagli */
+.detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px 4px 16px;
+  border-radius: 999px;
+  background: var(--surface-background-neutral-default-base);
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  font-size: var(--font-size-body-body2);
+  color: var(--content-default-default);
+  box-shadow: 0 2px 8px rgba(39, 39, 38, 0.1);
+}
+
+/* Azioni: Spendi / Vedi carta */
+.actions {
+  display: flex;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+.navCard {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 4px 12px rgba(39, 39, 38, 0.08);
+}
+.dark { background: var(--color-grey-900); color: var(--color-grey-0); }
+.light { background: var(--surface-background-neutral-default-base); color: var(--content-default-default); }
+.actionLabel {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-body-body2);
+  line-height: var(--line-height-body-body2);
+  letter-spacing: 0.12px;
+  color: var(--content-default-default);
+}

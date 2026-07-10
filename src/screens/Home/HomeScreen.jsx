@@ -23,6 +23,7 @@ import MerchantScreen from '../GoFlex/MerchantScreen.jsx'
 import FringeScreen from '../Fringe/FringeScreen.jsx'
 import UsaBuoniFlow from '../Buoni/UsaBuoniFlow.jsx'
 import ServiziScreen from '../Servizi/ServiziScreen.jsx'
+import PromoScreen from '../Promo/PromoScreen.jsx'
 import styles from './HomeScreen.module.css'
 
 const TABBAR_H = 84
@@ -53,6 +54,7 @@ export default function HomeScreen() {
   const [fringeOpen, setFringeOpen] = useState(false)
   const [usaBuoniOpen, setUsaBuoniOpen] = useState(false)
   const [serviziOpen, setServiziOpen] = useState(false)
+  const [promoOpen, setPromoOpen] = useState(false)
 
   useEffect(() => {
     if (done) introSeen = true
@@ -63,9 +65,14 @@ export default function HomeScreen() {
     else if (a.id === 'carta') setCarteOpen(true)
     else if (a.id === 'usa') setUsaBuoniOpen(true)
   }
+  // navigazione tab unica: valida ovunque compaia la tab bar (Home, Carte, Servizi)
   const onNav = (id) => {
+    setCarteOpen(false)
+    setServiziOpen(false)
+    setPromoOpen(false)
     if (id === 'carte') setCarteOpen(true)
     else if (id === 'servizi') setServiziOpen(true)
+    else if (id === 'promo') setPromoOpen(true)
     else setTab(id)
   }
 
@@ -205,7 +212,7 @@ export default function HomeScreen() {
       {/* Carte + dettaglio card */}
       <AnimatePresence>
         {carteOpen && (
-          <CarteScreen key="carte" onClose={() => setCarteOpen(false)} onDetail={(id) => setCardDetailId(id)} />
+          <CarteScreen key="carte" onClose={() => setCarteOpen(false)} onNav={onNav} onDetail={(id) => setCardDetailId(id)} />
         )}
       </AnimatePresence>
       <AnimatePresence>
@@ -263,14 +270,17 @@ export default function HomeScreen() {
           <ServiziScreen
             key="servizi"
             onClose={() => setServiziOpen(false)}
-            onNav={(id) => {
-              setServiziOpen(false)
-              if (id === 'carte') setCarteOpen(true)
-              else if (id === 'servizi') setServiziOpen(true)
-            }}
+            onNav={onNav}
             onFringe={() => setFringeOpen(true)}
             onGoFlex={() => setGoFlexOpen(true)}
           />
+        )}
+      </AnimatePresence>
+
+      {/* Promo: negozi convenzionati (tab Promo) */}
+      <AnimatePresence>
+        {promoOpen && (
+          <PromoScreen key="promo" onClose={() => setPromoOpen(false)} onNav={onNav} />
         )}
       </AnimatePresence>
 

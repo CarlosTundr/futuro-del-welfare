@@ -208,4 +208,21 @@ export const servizi = {
   },
 }
 
-export default { user, wallets, homeTabs, transactions, bottomNav, spendiWelfare, dettagliWelfare, dettagliBuoni, carte, servizi }
+// Schermata Promo (partner Vip District). Immagini Unsplash (id stabili) + fallback.
+export const promo = {
+  intro: {
+    title: 'Numerose promozioni dedicate a te',
+    sub: 'In questa sezione puoi accedere a vantaggi esclusivi presso numerosi punti vendita, fisici e online, gestiti attraverso il nostro partner Vip District.',
+  },
+  city: 'Milano',
+  count: 100,
+  stores: [
+    { id: 'conad', name: 'Conad', dist: '300mt', img: 'photo-1542838132-92c53300491e', desc: 'Utilizza il tuo buono Multiuso nei negozi Conad' },
+    { id: 'grandvision', name: 'GrandVision', dist: '600mt', img: 'photo-1574258495973-f010dfbb5371', desc: 'Prenditi cura della tua vista' },
+    { id: 'expert', name: 'Expert', dist: '900mt', img: 'photo-1498049794561-7780e7231661', desc: 'Utilizza il tuo buono Multiuso nei negozi Expert.' },
+    { id: 'arcaplanet', name: 'Arcaplanet', dist: '1200mt', img: 'photo-1601758228041-f3b2795255f1', desc: 'Acquista articoli per i tuoi amici a quattro zampe.' },
+    { id: 'primark', name: 'Primark', dist: '1500mt', img: 'photo-1441984904996-e0b6ba687e04', desc: 'Scopri le ultime tendenze della moda primavera-estate.' },
+  ],
+}
+
+export default { user, wallets, homeTabs, transactions, bottomNav, spendiWelfare, dettagliWelfare, dettagliBuoni, carte, servizi, promo }

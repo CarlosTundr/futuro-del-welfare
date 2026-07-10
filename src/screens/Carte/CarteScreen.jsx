@@ -34,7 +34,7 @@ function Slide({ x, offset, step, id, w, onClick }) {
   )
 }
 
-export default function CarteScreen({ onClose, onDetail }) {
+export default function CarteScreen({ onClose, onNav, onDetail }) {
   const [index, setIndex] = useState(0)
   const [cardW, setCardW] = useState(CARD_W_MAX)
   const deckRef = useRef(null)
@@ -146,7 +146,7 @@ export default function CarteScreen({ onClose, onDetail }) {
             <Icon name="chevron-right" size={18} />
           </motion.button>
         </div>
-        <TabBar items={bottomNav} active="carte" onChange={(id) => id === 'home' && onClose?.()} />
+        <TabBar items={bottomNav} active="carte" onChange={(id) => (onNav ? onNav(id) : id === 'home' && onClose?.())} />
       </motion.div>
     </motion.div>
   )

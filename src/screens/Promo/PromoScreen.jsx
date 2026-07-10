@@ -50,6 +50,7 @@ export default function PromoScreen({ onClose, onNav }) {
 
       <div className={styles.body}>
         <div className={styles.intro}>
+          <span className={styles.favicon}><Icon name="tundr" size={22} color="var(--content-default-default)" /></span>
           <h1 className={styles.introTitle}>{p.intro.title}</h1>
           <p className={styles.introSub}>{p.intro.sub}</p>
         </div>

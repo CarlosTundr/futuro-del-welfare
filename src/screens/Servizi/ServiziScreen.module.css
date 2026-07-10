@@ -27,7 +27,7 @@
   min-height: 0;
   overflow-y: auto;
   scrollbar-width: none;
-  background: var(--color-grey-200, #f1f1f0);
+  background: var(--surface-background-neutral-default-base);
   padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl);
 }
 .body::-webkit-scrollbar { display: none; }

@@ -27,12 +27,20 @@
   min-height: 0;
   overflow-y: auto;
   scrollbar-width: none;
-  background: var(--color-grey-200, #f1f1f0);
+  background: var(--surface-background-neutral-default-base);
   padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl);
 }
 .body::-webkit-scrollbar { display: none; }
 
 .intro { padding: 0 var(--spacing-sm); }
+.favicon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--color-yellow-400, #fec82f);
+  color: var(--content-default-default);
+  margin-bottom: var(--spacing-md);
+}
 .introTitle {
   font-family: var(--font-family-title);
   font-weight: 800;

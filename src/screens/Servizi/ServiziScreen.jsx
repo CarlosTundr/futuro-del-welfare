@@ -48,7 +48,7 @@ export default function ServiziScreen({ onClose, onNav, onFringe, onGoFlex }) {
           <p className={styles.introSub}>{s.intro.sub}</p>
         </div>
 
-        <Section data={s.welfare} faviconBg="var(--accent-yellow-default-muted, #fff7e1)" iconColor="#fdb015" onItem={onItem} />
+        <Section data={s.welfare} faviconBg="var(--color-yellow-400, #fec82f)" iconColor="var(--content-default-default)" onItem={onItem} />
         <Section data={s.buoni} delay={6} faviconBg="#d3eaea" iconColor="var(--color-green-700, #007d74)" onItem={onItem} />
       </div>
 

@@ -21,6 +21,7 @@ export { default as InlineLink } from './components/InlineLink/InlineLink.jsx'
 export { default as TabBar } from './components/TabBar/TabBar.jsx'
 export { default as IntroLightning } from './components/IntroLightning/IntroLightning.jsx'
 export { default as IntroLogo } from './components/IntroLogo/IntroLogo.jsx'
+export { default as IntroSplash } from './components/IntroSplash/IntroSplash.jsx'
 export { default as MerchantLogo } from './components/MerchantLogo/MerchantLogo.jsx'
 
 // Hooks / utils

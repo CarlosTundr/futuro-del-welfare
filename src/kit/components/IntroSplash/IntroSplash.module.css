@@ -1,0 +1,44 @@
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background:
+    radial-gradient(130% 60% at 50% 2%, #fff3cf 0%, rgba(255, 243, 207, 0) 55%),
+    linear-gradient(180deg, var(--color-yellow-300) 0%, var(--color-yellow-400) 55%, var(--color-yellow-300) 100%);
+}
+
+/* fulmine fermo, centrato nel viewport (posizione dell'intro) */
+.bolt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  line-height: 0;
+}
+
+/* footer centrato: il centraggio è via flex, non via transform
+   (Motion sovrascrive il transform del bottone durante l'animazione) */
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  justify-content: center;
+}
+
+/* bottone Entra */
+.enter {
+  min-width: 200px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 999px;
+  background: var(--content-default-default);
+  color: var(--color-grey-0, #fff);
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-body-body1);
+  box-shadow: 0 10px 24px -6px rgba(39, 39, 38, 0.35);
+  cursor: pointer;
+}

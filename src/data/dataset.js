@@ -43,8 +43,9 @@ export const wallets = [
       count: 22,
     },
     actions: [
-      { id: 'usa', label: 'Usa buoni', icon: 'card', variant: 'dark' },
-      { id: 'storico', label: 'Storico', icon: 'eye', variant: 'light' },
+      { id: 'usa', label: 'Usa Buoni', icon: 'tag', variant: 'dark' },
+      { id: 'dove', label: 'Dove spendere', icon: 'pin', variant: 'light' },
+      { id: 'carta', label: 'Vedi carta', icon: 'card', variant: 'light' },
     ],
   },
 ]

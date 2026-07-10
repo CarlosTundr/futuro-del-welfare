@@ -10,6 +10,7 @@ import {
   TabBar,
   IntroLightning,
   IntroLogo,
+  IntroSplash,
 } from '../../kit'
 import { wallets, homeTabs, transactions, bottomNav } from '../../data/dataset.js'
 import SpendiSheet from '../Spendi/SpendiSheet.jsx'
@@ -20,6 +21,7 @@ import CardDetailScreen from '../Carte/CardDetailScreen.jsx'
 import GoFlexScreen from '../GoFlex/GoFlexScreen.jsx'
 import MerchantScreen from '../GoFlex/MerchantScreen.jsx'
 import FringeScreen from '../Fringe/FringeScreen.jsx'
+import UsaBuoniFlow from '../Buoni/UsaBuoniFlow.jsx'
 import styles from './HomeScreen.module.css'
 
 const TABBAR_H = 84
@@ -36,7 +38,7 @@ export default function HomeScreen() {
   // intro a fasi: 'logo' (wordmark) -> 'bolt' (fulmine) -> 'done'.
   // Al ritorno in Home (introSeen) parte gia' da 'done', tutto smooth senza replay.
   const [phase, setPhase] = useState(
-    introSeen || (typeof location !== 'undefined' && /nointro/.test(location.search)) ? 'done' : 'logo',
+    introSeen || (typeof location !== 'undefined' && /nointro/.test(location.search)) ? 'done' : 'splash',
   )
   const revealBolt = useRef(!introSeen)
   const done = phase === 'done'
@@ -48,6 +50,7 @@ export default function HomeScreen() {
   const [goFlexOpen, setGoFlexOpen] = useState(false)
   const [gfMerchant, setGfMerchant] = useState(null)
   const [fringeOpen, setFringeOpen] = useState(false)
+  const [usaBuoniOpen, setUsaBuoniOpen] = useState(false)
 
   useEffect(() => {
     if (done) introSeen = true
@@ -56,6 +59,7 @@ export default function HomeScreen() {
   const onWalletAction = (a) => {
     if (a.id === 'spendi') setSpendiOpen(true)
     else if (a.id === 'carta') setCarteOpen(true)
+    else if (a.id === 'usa') setUsaBuoniOpen(true)
   }
   const onNav = (id) => {
     if (id === 'carte') setCarteOpen(true)
@@ -109,7 +113,7 @@ export default function HomeScreen() {
 
       {/* Fase 2+: il fulmine sale/sfoca e resta come sfondo */}
       <motion.div className={styles.boltWrap} style={{ scale: boltScale }}>
-        {phase !== 'logo' && (
+        {(phase === 'bolt' || phase === 'done') && (
           <IntroLightning color="#ffffff" reveal={revealBolt.current} onRest={() => setPhase('done')} />
         )}
       </motion.div>
@@ -210,7 +214,11 @@ export default function HomeScreen() {
       {/* Dettaglio Buoni Pasto */}
       <AnimatePresence>
         {dettagliBuoniOpen && (
-          <DettagliBuoniScreen key="dettagli-buoni" onClose={() => setDettagliBuoniOpen(false)} />
+          <DettagliBuoniScreen
+            key="dettagli-buoni"
+            onClose={() => setDettagliBuoniOpen(false)}
+            onUsa={() => setUsaBuoniOpen(true)}
+          />
         )}
       </AnimatePresence>
 
@@ -239,6 +247,16 @@ export default function HomeScreen() {
       {/* Fringe: lista brand (fetch dinamico dal foglio) */}
       <AnimatePresence>
         {fringeOpen && <FringeScreen key="fringe" onClose={() => setFringeOpen(false)} />}
+      </AnimatePresence>
+
+      {/* Usa Buoni: flusso pagamento buoni pasto */}
+      <AnimatePresence>
+        {usaBuoniOpen && <UsaBuoniFlow key="usabuoni" onClose={() => setUsaBuoniOpen(false)} />}
+      </AnimatePresence>
+
+      {/* Fase 0: splash con fulmine fermo + bottone Entra */}
+      <AnimatePresence>
+        {phase === 'splash' && <IntroSplash key="splash" onEnter={() => setPhase('logo')} />}
       </AnimatePresence>
 
       {/* Fase 1: wordmark Tundr animato (bianco, 50% larghezza, fulmine centrato) */}

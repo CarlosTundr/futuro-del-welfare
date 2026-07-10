@@ -7,7 +7,8 @@
   justify-content: space-around;
   padding: 12px 8px calc(12px + env(safe-area-inset-bottom, 0px));
   background: var(--surface-background-neutral-default-base);
-  border-top: 1px solid var(--surface-background-neutral-default-raised);
+  border-top: 1px solid var(--surface-background-neutral-default-idle);
+  box-shadow: 0 -6px 18px -10px rgba(39, 39, 38, 0.18);
 }
 .item {
   display: flex;

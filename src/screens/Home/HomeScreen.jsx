@@ -133,7 +133,7 @@ export default function HomeScreen() {
         className={styles.content}
         initial={{ opacity: 0 }}
         animate={{ opacity: done ? 1 : 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.35, ease: 'easeOut' }}
       >
         <TopBar title="Home" />
 

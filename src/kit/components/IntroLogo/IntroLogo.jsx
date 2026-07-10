@@ -8,7 +8,7 @@ import styles from './IntroLogo.module.css'
  IntroLogo — riproduce il wordmark Tundr animato (Lottie) al centro del viewport,
  forzato in BIANCO via filtro CSS. Al termine chiama onDone (poi la Home si setta).
 */
-export default function IntroLogo({ onDone, speed = 1.5 }) {
+export default function IntroLogo({ onDone, speed = 2 }) {
   const lottieRef = useRef(null)
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export default function IntroLogo({ onDone, speed = 1.5 }) {
     <motion.div
       className={styles.overlay}
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.08 }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      exit={{ opacity: 0, scale: 1.06 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <div className={styles.logo}>
         <Lottie

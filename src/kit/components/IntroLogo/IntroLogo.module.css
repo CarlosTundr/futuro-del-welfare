@@ -7,8 +7,8 @@
   pointer-events: none;
 }
 .logo {
-  /* 50% della larghezza disponibile */
-  width: 50%;
+  /* 30% della larghezza: riduce l'offset assoluto della scritta (fulmine comunque centrato) */
+  width: 30%;
   /* il fulmine nel wordmark sta a ~x155/402 (sinistra del centro):
      sposto a destra ~11% della larghezza per centrarlo nel viewport.
      --bolt-shift e' regolabile. */

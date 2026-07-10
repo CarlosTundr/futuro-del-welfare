@@ -41,7 +41,7 @@ export default function IntroLightning({ color = '#ffffff', reveal = true, onRes
           filter: ['blur(0px)', 'blur(0px)', `blur(${REST.blur}px)`],
           opacity: [0, 1, REST.opacity],
         }}
-        transition={{ duration: 1.0, times: [0, 0.35, 1], ease: ['easeOut', [0.16, 1, 0.3, 1]] }}
+        transition={{ duration: 0.55, times: [0, 0.3, 1], ease: ['easeOut', [0.16, 1, 0.3, 1]] }}
         onAnimationComplete={onRest}
       >
         <Icon name="lightning" size={230} color="currentColor" />
